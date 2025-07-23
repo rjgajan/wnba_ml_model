@@ -2,3 +2,4 @@
 data_calls/misc/
 nba_streakiness/
 player_parquets/
+*.parquet
