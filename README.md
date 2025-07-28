@@ -11,3 +11,4 @@ Ongoing edits:
 - pace (poss/40) *DONE*
 - drop L3 vs. OPP (field was empty or only had one or two games too often and increased RMSE by 0.5) *DONE*
 - add a measure of predicted or actual game spread (account for blowouts / chance of overtime)
+- develop a fatigue measure (based on miles traveled in L3 days, # games in last x days)
