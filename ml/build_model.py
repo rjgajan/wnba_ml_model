@@ -8,8 +8,8 @@ from xgboost import XGBRegressor
 
 def preprocess_and_train(df):
     # filter for required features
-    features = ['days_since_last_game', 'avg_prev_5', 'avg_prev_15',
-                'HOME_AWAY', 'OPP_DEF_RATING', 'avg_prev_opp_3']
+    features = ['rest_diff', 'OPP_PACE', 'avg_prev_5', 
+                'avg_prev_15', 'HOME_AWAY', 'OPP_DEF_RATING', 'team_rest_days']
     target = 'PTS'
     df = df.dropna(subset=features + [target])
     X = df[features]
@@ -50,9 +50,10 @@ if __name__ == "__main__":
         'OPP_DEF_RATING': 99.4,
         'avg_prev_15': 22.27,
         'avg_prev_5': 24.2,
-        'HOME_AWAY': 'Home',
-        'avg_prev_opp_3': 29,
-        'days_since_last_game': 5
+        'HOME_AWAY': 'Away',
+        'rest_diff': 0,
+        'OPP_PACE': 80,
+        'team_rest_days': 5
     }])
     prediction = model.predict(example_input)
     print(f"Predicted next game points: {prediction[0]:.2f}")
