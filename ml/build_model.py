@@ -29,7 +29,17 @@ def preprocess_and_train(df):
     # ml pipeline
     model = Pipeline(steps=[
         ('preprocessor', preprocessor),
-        ('regressor', XGBRegressor(n_estimators=100, learning_rate=0.1, random_state=42))
+        ('regressor', XGBRegressor(
+            n_estimators = 530,
+            learning_rate = 0.01001361825891669,
+            max_depth = 3,
+            subsample = 0.7514892897979619,
+            colsample_bytree = 0.7348989896501112,
+            gamma = 1.99332691197874,
+            min_child_weight = 2,
+            reg_lambda = 2.865331577453844,
+            reg_alpha = 5.275622148785655,
+            ))
     ])
 
     model.fit(X_train, y_train)
